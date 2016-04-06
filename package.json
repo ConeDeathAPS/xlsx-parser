@@ -1,0 +1,11 @@
+{
+  "name": "xlsx_parser",
+  "version": "1.0.0",
+  "description": "Takes the matrix received from marketing and formats it into individual locale files.",
+  "main": "parse.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Sorensen",
+  "license": "ISC"
+}
