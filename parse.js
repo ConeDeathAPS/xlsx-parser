@@ -456,7 +456,7 @@ function buildModules(column) {
 								var strongText = spreadsheet[column+(idx+2)].w;	
 							}
 							//These strings go through a few variables as the string gets split into smaller and smaller pieces. It saves what is needed as soon as it is isolated.
-							if (strongText = "N/A") {
+							if (strongText == "N/A") {
 								var splitStrongText = fullText.split(/\.|。/);
 							} else {
 								var splitStrongText = fullText.split(strongText);								
@@ -872,7 +872,7 @@ function traverseColumns() {
 function normalizeStrings(locales) {
 	//Begin looping through to get to each element
 	//Change this back to locales.length when finished with development
-	for (var i = 0; i < 1; i++) {
+	for (var i = 0; i < locales.length; i++) {
 		//Deal with locVars
 		//Need nested for loops to access everything
 		for (module in locales[i].content.locVars) {
@@ -895,17 +895,27 @@ function normalizeStrings(locales) {
 					locales[i].content.locVars[module][variable] = thisVar;
 				}
 				//Formatting for link text
-				if (variable.match(/linkText/) && thisVar != "N/A") {
+				if (variable.match(/linkText/i) && thisVar != "N/A") {
 					//Remove ridiculous line breaks that are apparently coming out of nowhere...also spaces in front of text
 					var end = thisVar.search(">");
-					if (thisVar[0] === " ") {
+					if (thisVar[0] === " " && end) {
 						thisVar = thisVar.slice(1, end+1);						
 					} else {
-						thisVar = thisVar.slice(0, thisVar.length);
+						thisVar = thisVar.slice(0, end+1);
 					}
-					//Begin removing excess space and the caret
-					thisVar = thisVar.replace(/\s>$|>$/g, "");
-					thisVar += "&nbspc;&raquo;";
+					//If there is no caret already at the end, add one
+					if (!end) {
+						//We still may need to slice a spacae off the front.
+						if (thisVar[0] == " ") {
+							thisVar = thisVar.slice(1, thisVar.length-1);
+						}
+						//Add the caret and space
+						thisVar += "&nbspc;&raquo;";
+					} else {
+						//If end does exist, then we can replace the caret with the raquo thing.
+						thisVar = thisVar.replace(/\s>$|>$/g, "");
+						thisVar += " &nbspc;&raquo;";
+					}	
 					//This will be at the end of every case
 					locales[i].content.locVars[module][variable] = thisVar;
 				}

@@ -5,18 +5,18 @@
 			"Punchcard_header_register": "Earn 10,500 Expedia+ Points!",
 			"Punchcard_body_register": "Simply register and stay 6 nights at +VIP Access&trade; hotels in 2016.",
 			"Punchcard_bodyText_register": "Register Now ",
-			"Register_now_link": "http://www.expedia.com/g/un/rewards-vipaccess-punchcard?langid=1033&amp;",
+			"Register_now_link": "http://www.expedia.ca/g/un/rewards-vipaccess-punchcard?langid=4105&amp;",
 			"Punchcard_header_registered": "You’re Registered for Our +VIP Access&trade; Offer",
 			"Punchcard_body_registered": "Check out your progress every month, and remember it just takes 6 nights at +VIP Access&trade; hotels to earn 10,500 Expedia+ points! ",
 			"Punchcard_bodyText_registered": "See Hotels",
-			"See_hotels_link": "https://www.expedia.com/rewards/vipaccess&amp;",
+			"See_hotels_link": "https://www.expedia.ca/rewards/vipaccess?&amp;langid=4105&",
 			"Punchcard_header_full": "You Earned 10,500 Expedia+ Points!",
 			"Punchcard_body_full": "Remember you get double the value for your points when you redeem at +VIP Access&trade; hotels. ",
 			"Punchcard_bodyText_full": "Redeem Now ",
-			"Redeem_now_link": "https://www.expedia.com/rewards/redeem?langid=1033&amp;"
+			"Redeem_now_link": "https://www.expedia.ca/rewards/redeem?langid=4105&amp;"
 		},
 		"ele_benefits_reminder_module": {
-			"ELE_header": "Take Advantage of Your Exclusive Concierge Benefits",
+			"ELE_header": "same as US EN 1033",
 			"ELE_subheader_place1": "For your upcoming trip to Hawaii",
 			"ELE_strongPreText": "Remember that our +gold and +silver members receive ",
 			"ELE_strongPostText": " Simply call the dedicated elite concierge at 1-888-408-4992, or visit the concierge desk in person",
@@ -31,22 +31,22 @@
 			"ELE_bodyPhone__place2": " 1-888-408-4992,",
 			"ELE_bodyPostPhone__place2": "U.",
 			"ELE_bodyPostPhone": "U.",
-			"ELE_bodyLinkText": "Learn More"
+			"ELE_bodyLinkText": "same as US EN 1033"
 		},
 		"spotlight1_module": {
 			"spotlight_icon": "N/A",
 			"spotlight_link": "N/A"
 		},
 		"special_offers_module": {
-			"SpecialOffers_header": "Special Offers",
+			"SpecialOffers_header": "same as US EN 1033",
 			"SpecialOffers_icon__offer1": "Mobile",
 			"SpecialOffers_text__offer1": "Don’t forget—you get triple points for all your bookings made on the Expedia App.",
 			"SpecialOffers_linkText__offer1": "Download the App &nbspc;&raquo;",
-			"SpecialOffers_URL__offer1": "https://www.expedia.com/app&",
+			"SpecialOffers_URL__offer1": "https://www.expedia.ca/app?&langid=4105&",
 			"SpecialOffers_icon__offer2": "Deal",
-			"SpecialOffers_text__offer2": "We’re always finding new offers and discounts just exclusively for our Expedia+ members. Sign in to your account regularly and don't miss the special offers on the Rewards page.",
+			"SpecialOffers_text__offer2": "We’re always finding new offers and discounts exclusively for our Expedia+ members. Sign in to your account regularly and check out the special offers on your Rewards page!",
 			"SpecialOffers_linkText__offer2": "Sign In &amp; See Current Offers &nbspc;&raquo;",
-			"SpecialOffers_URL__offer2": "https://www.expedia.com/user/signin?selc=1&ckoflag=0&uurl=qscr%3Dredr%26rurl%3D%2Fuser%2Fexpediarewards&",
+			"SpecialOffers_URL__offer2": "https://www.expedia.ca/user/signin?selc=1&ckoflag=0&uurl=qscr%3Dredr%26rurl%3D%2Fuser%2Fexpediarewards&langid=4105&",
 			"SpecialOffers_icon__offer3": "N/A",
 			"SpecialOffers_text__offer3": "N/A",
 			"SpecialOffers_linkText__offer3": "N/A",
@@ -65,7 +65,7 @@
 		"education_module": {
 			"benefits_header__blue": "Your +blue benefits",
 			"benefits_header__silver": "Your +silver benefits",
-			"benefits_header__gold": "Your +silver benefits",
+			"benefits_header__gold": "Your +gold benefits",
 			"benefits_left_icon__blue": "Member Pricing head and shoulders",
 			"benefits_left_text__blue": "Sign in to your account to unlock special member-only prices",
 			"benefits_left_linkText__blue": "Sign in to shop &nbspc;&raquo;",
@@ -81,7 +81,7 @@
 			"benefits_left_linkText__gold": " &nbspc;&raquo;",
 			"benefits_left_linkURL__gold": "${edu_amenities_linkURL}",
 			"benefits_left_linkHashText_gold": "N/A",
-			"benefits_middle_icon__blue": "Mobile icon",
+			"benefits_middle_icon__blue": "Mobile",
 			"benefits_middle_text__blue": "Earn triple points when you book on the Expedia App",
 			"benefits_middle_linkText__blue": " &nbspc;&raquo;",
 			"benefits_middle_linkURL__blue": "${edu_sign_in_to_shop_linkURL}",
@@ -90,7 +90,7 @@
 			"benefits_middle_text__silver": "Earn 10% bonus points on eligible bookings",
 			"benefits_middle_linkText__silver": " &nbspc;&raquo;",
 			"benefits_middle_linkURL__silver": "${edu_amenities_linkURL}",
-			"benefits_middle_linkHashText_silver": "N/A",
+			"benefits_middle_linkHashText_silver": "benefits",
 			"benefits_middle_icon__gold": "Points icon",
 			"benefits_middle_text__gold": "Earn 30% bonus points on eligible bookings",
 			"benefits_middle_linkText__gold": " &nbspc;&raquo;",
@@ -140,13 +140,13 @@
 		"summaryEnoughPtsLabel": "You have enough points to redeem for a reward!",
 		"summaryRedeemLinkText": "Redeem Now&nbspc;&raquo;",
 		"summaryType": {
-			"subheader1": "Book travel & move closer to +silver status",
-			"subheader2": "Enjoy your +silver benefits as you earn your way to +gold",
-			"subheader3": "Enjoy your +silver benefits as an Expedia®+ Card cardmember",
-			"subheader4": "Book and maintain your +gold status through Feb. 28, 2018",
-			"subheader5": "Enjoy your +gold status through Feb. 28, 2018",
-			"subheader6": "Enjoy your +gold benefits as an Expedia®+ Voyager Card cardmember",
-			"subheader7": "Book more travel & reap the rewards"
+			"subheader1": "same as US EN 1033",
+			"subheader2": "same as US EN 1033",
+			"subheader3": "N/A",
+			"subheader4": "Book and maintain your +gold status through 28 February, 2018",
+			"subheader5": "Enjoy your +gold status through 28 February 2018",
+			"subheader6": "N/A",
+			"subheader7": "same as US EN 1033"
 		},
 		"hotelNights": {
 			"silverPoints": 7,
@@ -164,12 +164,11 @@
 			"goldThresholdText": "10,000",
 			"blueLabel": "+blue",
 			"silverLabel": "+silver",
-			"goldLabel": "+gold",
-			"preCurrencySymbol": "$"
+			"goldLabel": "+gold"
 		},
 		"summaryNightsSpentLabel": "Hotel nights:",
-		"summaryDollarsSpentLabel": "Dollars spent:",
-		"GVB_Max": "$10,000",
+		"summaryDollarsSpentLabel": "same as US EN 1034",
+		"GVB_Max": "C$10,000",
 		"asOfNightsText": "(as of ${AsOfDate})",
 		"asOfDollarsText": "(as of ${AsOfDate})"
 	}
