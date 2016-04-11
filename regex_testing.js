@@ -1,4 +1,8 @@
-var regex = /1([0-9]|-|\(|\)|\s)+/;
-var string = "1 (800) 555-5555";
+var regex = /<span style="font-weight: bold;">/g;
+var string = 'Simply <span style="font-weight: bold;">register and stay</span><span style=""> </span><span style="font-weight: bold;">6 nights </span><span style="">at +VIP Accessâ¢ hotels in 2016.</span';
 
-console.log(string.match(regex)[0]);
+string = string.replace(regex, "<b>")
+string = string.replace(/<span style="">/, "");
+string = string.replace(/<\/span>/, "</b>")
+
+console.log(string);
