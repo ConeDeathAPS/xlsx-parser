@@ -138,7 +138,6 @@ function isolateLocales(lastCol) {
 		return 0;
 	}
 }
-//End of locale counting function
 
 //This function reads column A and determines modules and variable names
 function isolateModules() {
@@ -184,7 +183,7 @@ function isolateModules() {
 function buildLocales() {
 	currentCol = "B";
 	// console.log(locales);
-	for (var i = 0; i < numLocales; i++) {	
+	for (var i = 0; i < 1; i++) {	
 		console.log("Building for locale", locales[i]);		
 		locales[i].eyebrow_linktext = ((spreadsheet[currentCol+"23"].v === "same as CA EN 4105") ? spreadsheet["C"+"23"].v : spreadsheet[currentCol+"23"].v);
 		locales[i].eyebrow_link = ((spreadsheet[currentCol+"24"].v === "same as CA EN 4105") ? spreadsheet["C"+"24"].v : spreadsheet[currentCol+"24"].v);
@@ -471,12 +470,11 @@ function buildModules(column) {
 							} else {
 								var splitPhoneText = splitStrongText[0].split(/\.|。/);								
 							}
-
 							//Pull out the phone number and store it
 							var phoneNumber = fullText.match(/(\d.\d\d\d.\d\d\d.\d\d\d\d|\d..\d\d\d..\d\d\d.\d\d\d\d|.\d.\d\d\d.\d\d\d.\d\d\d\d.)/)[0];
 							//Split the phone sentence via the phone number that we just pulled out
 							//FOR th_TH, YOU MUST MANUALLY GO IN TO THE LOC AND ASSIGN THE PREPHONE AND POST PHONE VARIABLES!!! THERE IS NO PUNCTUATION TO SPLIT BY.
-							var splitPhoneComponents = ((splitPhoneText[1]) ? splitPhoneText[1].split(phoneNumber) : "MUST FIX MANUALY");
+							var splitPhoneComponents = ((splitPhoneText[1]) ? splitPhoneText[1].split(phoneNumber) : "MUST FIX MANUALLY");
 							//Another variable that only needs to be saved once
 							obj.locVars.ele_benefits_reminder_module.ELE_bodyPrePhone = splitPhoneComponents[0];
 							//Now we save the phone number link (adding a little thingy to the beginning)
@@ -500,19 +498,24 @@ function buildModules(column) {
 								var strongText = spreadsheet[column+(idx+2)].w;	
 							}
 							//These strings go through a few variables as the string gets split into smaller and smaller pieces. It saves what is needed as soon as it is isolated.
-							if (strongText = "N/A") {
+							if (strongText == "N/A") {
 								var splitStrongText = fullText.split(/\.|。/);
 							} else {
 								var splitStrongText = fullText.split(strongText);								
 							}
 							//This first variable, the strongPreText is the same for both places, so we only need to save it for this first one.					
 							obj.locVars.ele_benefits_reminder_module.ELE_strongText__place2 = strongText;
-							var splitPhoneText = splitStrongText[1].split(/\.|。/);
+							if (splitStrongText.length > 1) {
+								var splitPhoneText = splitStrongText[1].split(/\.|。/);		
+								//freaking thai....no punctuation and it doesn't want to split properly.						
+							} else {
+								var splitPhoneText = splitStrongText[0].split(/\.|。/);								
+							}
 							obj.locVars.ele_benefits_reminder_module.ELE_strongPostText = splitStrongText[1];
 							//Pull out the phone number and store it.
-							var phoneNumber = fullText.match(/(\d.\d\d\d.\d\d\d.\d\d\d\d|\d..\d\d\d..\d\d\d.\d\d\d\d|.\d.\d\d\d.\d\d\d.\d\d\d\d.)/)[0];								
+							var phoneNumber = fullText.match(/(\d.\d\d\d.\d\d\d.\d\d\d\d|\d..\d\d\d..\d\d\d.\d\d\d\d|.\d.\d\d\d.\d\d\d.\d\d\d\d.)/)[0];				
 							//Split the phone sentence via the phone number that we just pulled out
-							var splitPhoneComponents = ((splitPhoneText[1]) ? splitPhoneText[1].split(phoneNumber) : "MUST FIX MANUALY");
+							var splitPhoneComponents = ((splitPhoneText[1]) ? splitPhoneText[1].split(phoneNumber) : splitPhoneText[0].split(phoneNumber));
 							//Now we save the phone number link (adding a little thingy to the beginning)
 							obj.locVars.ele_benefits_reminder_module.ELE_bodyPhoneLink__place2 = "tel:"+phoneNumber;
 							obj.locVars.ele_benefits_reminder_module.ELE_bodyPhone__place2 = phoneNumber;
@@ -872,7 +875,7 @@ function traverseColumns() {
 function normalizeStrings(locales) {
 	//Begin looping through to get to each element
 	//Change this back to locales.length when finished with development
-	for (var i = 0; i < locales.length; i++) {
+	for (var i = 0; i < 1; i++) {
 		//Deal with locVars
 		//Need nested for loops to access everything
 		for (module in locales[i].content.locVars) {
@@ -926,7 +929,7 @@ function normalizeStrings(locales) {
 		}
 		//Deal with rewardsObj
 		var fileName = "./output/loc_" + locales[i].name + ".ftl";
-		fs.appendFile(fileName, JSON.stringify(locales[i].content, null, '\t'), function(err) {
+		fs.appendFile(fileName, JSON.stringify(locales[i], null, '\t'), function(err) {
 			if (err) {
 				console.log(err);
 			}
